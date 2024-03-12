@@ -12,15 +12,19 @@ RUN openssl req -x509 -newkey rsa:2048 -nodes -sha256 -subj '/CN=localhost' \
 FROM node:21-alpine3.18
 
 RUN corepack enable
-RUN corepack prepare yarn@canary --activate
 
 WORKDIR /home/node/app
 RUN chown -R node:node /home/node
-USER node
 
 COPY --from=0 /home/node/app/localhost-cert.pem .
 COPY --from=0 /home/node/app/localhost-privkey.pem .
 
-# COPY .yarnrc.yml yarn.lock package.json ./
-# RUN yarn install --immutable
+COPY .yarn yarn.lock package.json ./
+
+
+# Cache key changes, so immutable doesn't work
+RUN yarn install # --immutable
+
+# USER node
+
 

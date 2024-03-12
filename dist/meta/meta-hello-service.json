@@ -1,7 +1,7 @@
 {
   "inputs": {
     "svcs/hello/src/index.mts": {
-      "bytes": 683,
+      "bytes": 659,
       "imports": [
         {
           "path": "node:fs/promises",
@@ -45,10 +45,10 @@
       "entryPoint": "svcs/hello/src/index.mts",
       "inputs": {
         "svcs/hello/src/index.mts": {
-          "bytesInOutput": 643
+          "bytesInOutput": 641
         }
       },
-      "bytes": 671
+      "bytes": 669
     }
   }
 }

@@ -19,7 +19,7 @@ server.on('stream', async (stream, headers) => {
     'content-type': 'text/html; charset=utf-8',
     ':status': 200,
   })
-  stream.end('<h1>Hello worlder!!</h1>')
+  stream.end('<h1>Hello worlp!!</h1>')
 })
 
 server.listen(port)

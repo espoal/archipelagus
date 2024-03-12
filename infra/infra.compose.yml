@@ -12,5 +12,5 @@ services:
     volumes:
       - ../dist/hello/src:/home/node/app/src
       - ../.yarn:/home/node/.yarn
-    command: "node src/index.mjs"
+    command: "yarn nodemon src/index.mjs"
 
