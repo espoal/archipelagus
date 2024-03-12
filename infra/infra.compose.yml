@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+
+  hello-service:
+    build:
+      dockerfile: ../../infra/server.docker
+      context: ../dist/hello
+    init: true
+    restart: always
+    ports:
+      - "8443:8443"
+    volumes:
+      - ../dist/hello/src:/home/node/app/src
+      - ../.yarn:/home/node/.yarn
+    command: "node src/index.mjs"
+
