@@ -4,7 +4,10 @@
   "scripts": {
     "build:dev": "node build.mjs",
     "dev:infra": "docker compose -f infra/infra.compose.yml up --build",
-    "dev:clean": "docker compose -f infra/infra.compose.yml down --volumes --remove-orphans"
+    "dev:clean": "docker compose -f infra/infra.compose.yml down --volumes --remove-orphans",
+    "lint:fix": "biome check --apply-unsafe .",
+    "lint:format": "biome format --write .",
+    "lint:ci": "biome ci ."
   },
   "workspaces": [
     "dist/*",
