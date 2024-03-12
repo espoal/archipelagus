@@ -1,0 +1,15 @@
+{
+  "name": "@espoal/archipelagus",
+  "workspaces": [
+    "dist/*",
+    "docs",
+    "infra",
+    "pkgs/*",
+    "svcs/*",
+    "tests"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "1.6.0"
+  },
+  "packageManager": "yarn@4.1.1"
+}
