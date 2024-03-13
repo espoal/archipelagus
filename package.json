@@ -16,6 +16,7 @@
     "libs/*",
     "infra",
     "pkgs/*",
+    "routes/*",
     "svcs/*",
     "tests",
     "ui"

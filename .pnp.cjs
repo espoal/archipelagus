@@ -14,7 +14,11 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:."\
     },\
     {\
-      "name": "hello",\
+      "name": "@dist/front",\
+      "reference": "workspace:dist/front"\
+    },\
+    {\
+      "name": "@dist/hello",\
       "reference": "workspace:dist/hello"\
     },\
     {\
@@ -26,23 +30,34 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:libs/build"\
     },\
     {\
+      "name": "@svcs/front",\
+      "reference": "workspace:svcs/front"\
+    },\
+    {\
       "name": "@svcs/hello",\
       "reference": "workspace:svcs/hello"\
     },\
     {\
       "name": "tests",\
       "reference": "workspace:tests"\
+    },\
+    {\
+      "name": "ui",\
+      "reference": "workspace:ui"\
     }\
   ],\
   "enableTopLevelFallback": true,\
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)|(^(?:dist(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "fallbackExclusionList": [\
+    ["@dist/front", ["workspace:dist/front"]],\
+    ["@dist/hello", ["workspace:dist/hello"]],\
     ["@espoal/archipelagus", ["workspace:."]],\
     ["@libs/build", ["workspace:libs/build"]],\
+    ["@svcs/front", ["workspace:svcs/front"]],\
     ["@svcs/hello", ["workspace:svcs/hello"]],\
     ["docs", ["workspace:docs"]],\
-    ["hello", ["workspace:dist/hello"]],\
-    ["tests", ["workspace:tests"]]\
+    ["tests", ["workspace:tests"]],\
+    ["ui", ["workspace:ui"]]\
   ],\
   "fallbackPool": [\
   ],\
@@ -146,6 +161,26 @@ const RAW_RUNTIME_STATE =
           ["@biomejs/cli-win32-x64", "npm:1.6.0"]\
         ],\
         "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@dist/front", [\
+      ["workspace:dist/front", {\
+        "packageLocation": "./dist/front/",\
+        "packageDependencies": [\
+          ["@dist/front", "workspace:dist/front"],\
+          ["nodemon", "npm:3.1.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@dist/hello", [\
+      ["workspace:dist/hello", {\
+        "packageLocation": "./dist/hello/",\
+        "packageDependencies": [\
+          ["@dist/hello", "workspace:dist/hello"],\
+          ["nodemon", "npm:3.1.0"]\
+        ],\
+        "linkType": "SOFT"\
       }]\
     ]],\
     ["@esbuild/aix-ppc64", [\
@@ -434,6 +469,15 @@ const RAW_RUNTIME_STATE =
           ["@pkgjs/parseargs", "npm:0.11.0"]\
         ],\
         "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@svcs/front", [\
+      ["workspace:svcs/front", {\
+        "packageLocation": "./svcs/front/",\
+        "packageDependencies": [\
+          ["@svcs/front", "workspace:svcs/front"]\
+        ],\
+        "linkType": "SOFT"\
       }]\
     ]],\
     ["@svcs/hello", [\
@@ -908,16 +952,6 @@ const RAW_RUNTIME_STATE =
           ["has-flag", "npm:3.0.0"]\
         ],\
         "linkType": "HARD"\
-      }]\
-    ]],\
-    ["hello", [\
-      ["workspace:dist/hello", {\
-        "packageLocation": "./dist/hello/",\
-        "packageDependencies": [\
-          ["hello", "workspace:dist/hello"],\
-          ["nodemon", "npm:3.1.0"]\
-        ],\
-        "linkType": "SOFT"\
       }]\
     ]],\
     ["http-cache-semantics", [\
@@ -1622,6 +1656,15 @@ const RAW_RUNTIME_STATE =
           ["typescript", "patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>::version=5.4.2&hash=5adc0c"]\
         ],\
         "linkType": "HARD"\
+      }]\
+    ]],\
+    ["ui", [\
+      ["workspace:ui", {\
+        "packageLocation": "./ui/",\
+        "packageDependencies": [\
+          ["ui", "workspace:ui"]\
+        ],\
+        "linkType": "SOFT"\
       }]\
     ]],\
     ["undefsafe", [\

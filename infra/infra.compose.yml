@@ -1,6 +1,18 @@
 version: "3.9"
 services:
 
+  front:
+    build:
+      dockerfile: ../../infra/server.docker
+      context: ../dist/front
+    init: true
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../dist/front/src:/home/node/app/src
+    command: "yarn nodemon src/index.mjs"
+
   hello-service:
     build:
       dockerfile: ../../infra/server.docker

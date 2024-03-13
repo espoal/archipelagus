@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { createSecureServer, createServer } from "node:http2";
 import { env } from "node:process";
 var isProd = env.NODE_ENV === "production";
-var port = Number(env.ETL_PORT) || 8443;
+var port = Number(env.HELLO_PORT) || 8443;
 var server = isProd ? createServer() : createSecureServer({
   key: await readFile("localhost-privkey.pem"),
   cert: await readFile("localhost-cert.pem")

@@ -1,7 +1,7 @@
 {
   "inputs": {
-    "svcs/hello/src/index.mts": {
-      "bytes": 661,
+    "svcs/front/src/index.mts": {
+      "bytes": 723,
       "imports": [
         {
           "path": "node:fs/promises",
@@ -23,7 +23,7 @@
     }
   },
   "outputs": {
-    "dist/hello/src/index.mjs": {
+    "dist/front/src/index.mjs": {
       "imports": [
         {
           "path": "node:fs/promises",
@@ -42,13 +42,13 @@
         }
       ],
       "exports": [],
-      "entryPoint": "svcs/hello/src/index.mts",
+      "entryPoint": "svcs/front/src/index.mts",
       "inputs": {
-        "svcs/hello/src/index.mts": {
-          "bytesInOutput": 643
+        "svcs/front/src/index.mts": {
+          "bytesInOutput": 710
         }
       },
-      "bytes": 671
+      "bytes": 738
     }
   }
 }

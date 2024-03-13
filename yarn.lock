@@ -96,6 +96,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dist/front@workspace:dist/front":
+  version: 0.0.0-use.local
+  resolution: "@dist/front@workspace:dist/front"
+  dependencies:
+    nodemon: "npm:3.1.0"
+  languageName: unknown
+  linkType: soft
+
+"@dist/hello@workspace:dist/hello":
+  version: 0.0.0-use.local
+  resolution: "@dist/hello@workspace:dist/hello"
+  dependencies:
+    nodemon: "npm:3.1.0"
+  languageName: unknown
+  linkType: soft
+
 "@esbuild/aix-ppc64@npm:0.20.1":
   version: 0.20.1
   resolution: "@esbuild/aix-ppc64@npm:0.20.1"
@@ -319,6 +335,12 @@ __metadata:
   checksum: 10/115e8ceeec6bc69dff2048b35c0ab4f8bbee12d8bb6c1f4af758604586d802b6e669dcb02dda61d078de42c2b4ddce41b3d9e726d7daa6b4b850f4adbf7333ff
   languageName: node
   linkType: hard
+
+"@svcs/front@workspace:svcs/front":
+  version: 0.0.0-use.local
+  resolution: "@svcs/front@workspace:svcs/front"
+  languageName: unknown
+  linkType: soft
 
 "@svcs/hello@workspace:svcs/hello":
   version: 0.0.0-use.local
@@ -779,14 +801,6 @@ __metadata:
   checksum: 10/4a15638b454bf086c8148979aae044dd6e39d63904cd452d970374fa6a87623423da485dfb814e7be882e05c096a7ccf1ebd48e7e7501d0208d8384ff4dea73b
   languageName: node
   linkType: hard
-
-"hello@workspace:dist/hello":
-  version: 0.0.0-use.local
-  resolution: "hello@workspace:dist/hello"
-  dependencies:
-    nodemon: "npm:3.1.0"
-  languageName: unknown
-  linkType: soft
 
 "http-cache-semantics@npm:^4.1.1":
   version: 4.1.1
@@ -1439,6 +1453,12 @@ __metadata:
   checksum: 10/f5f9a4133c2670761f0166eae5b3bafbc4a3fc24f0f42a93c9c893d9e9d6e66ea066969c5e7483fa66b4ae0e99125592553f3b92fd3599484de8be13b0615176
   languageName: node
   linkType: hard
+
+"ui@workspace:ui":
+  version: 0.0.0-use.local
+  resolution: "ui@workspace:ui"
+  languageName: unknown
+  linkType: soft
 
 "undefsafe@npm:^2.0.5":
   version: 2.0.5

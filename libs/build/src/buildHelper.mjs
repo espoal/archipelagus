@@ -39,6 +39,7 @@ export const buildHelper = async ({
     options.entryPoints = resolvedPatterns
   }
 
+
   if (shouldWatch) {
     const ctx = await esbuild.context(options)
     await ctx.watch()
