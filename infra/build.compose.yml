@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+
+  build:
+    build:
+      dockerfile: dev.docker
+    restart: always
+    volumes:
+      - ../:/home/node/app
+    command: "yarn node build.mjs watch"
+
+  # TODO: it needs rome watch mode
+  lint:
+    build:
+      dockerfile: dev.docker
+    # restart: always
+    profiles:
+      - donotstart
+    depends_on:
+      - build
+    volumes:
+      - ../:/home/node/app
+    command: "yarn rome"

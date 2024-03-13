@@ -1,0 +1,30 @@
+{
+  "name": "@espoal/archipelagus",
+  "version": "0.0.1",
+  "scripts": {
+    "build:dev": "node build.mjs",
+    "dev:infra": "docker compose -f infra/infra.compose.yml up --build",
+    "dev:build": "docker compose -f infra/build.compose.yml up --build",
+    "dev:clean": "docker compose -f infra/infra.compose.yml -f infra/build.compose.yml down --volumes --remove-orphans",
+    "lint:fix": "biome check --apply-unsafe .",
+    "lint:format": "biome format --write .",
+    "lint:ci": "biome ci ."
+  },
+  "workspaces": [
+    "dist/*",
+    "docs",
+    "libs/*",
+    "infra",
+    "pkgs/*",
+    "svcs/*",
+    "tests",
+    "ui"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "1.6.0",
+    "@libs/build": "workspace:*",
+    "@types/node": "20.11.26",
+    "typescript": "5.4.2"
+  },
+  "packageManager": "yarn@4.1.1"
+}

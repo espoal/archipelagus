@@ -1,0 +1,30 @@
+FROM debian:latest
+
+RUN apt-get update && apt-get install -y openssl
+RUN useradd -m node
+
+USER node
+WORKDIR /home/node/app
+
+RUN openssl req -x509 -newkey rsa:2048 -nodes -sha256 -subj '/CN=localhost' \
+      -keyout localhost-privkey.pem -out localhost-cert.pem
+
+FROM node:21-alpine3.18
+
+RUN corepack enable
+
+WORKDIR /home/node/app
+RUN chown -R node:node /home/node
+
+COPY --from=0 /home/node/app/localhost-cert.pem .
+COPY --from=0 /home/node/app/localhost-privkey.pem .
+
+COPY .yarn yarn.lock package.json ./
+
+
+# Cache key changes, so immutable doesn't work
+RUN yarn install # --immutable
+
+# USER node
+
+

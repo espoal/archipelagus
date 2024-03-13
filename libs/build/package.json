@@ -1,0 +1,9 @@
+{
+  "name": "@libs/build",
+  "main": "index.mjs",
+  "dependencies": {
+    "esbuild": "0.20.1",
+    "glob": "10.3.10"
+  },
+  "packageManager": "yarn@4.1.1"
+}
